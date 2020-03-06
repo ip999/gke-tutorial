@@ -1,5 +1,5 @@
 resource "google_container_node_pool" "custom_nodepool" {
-  depends_on = [google_container_cluster.kluster]
+  depends_on = [google_container_cluster.var.cluster_name]
   
   for_each = var.node_pools
 
