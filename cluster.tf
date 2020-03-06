@@ -1,5 +1,5 @@
 locals {
-  project = "gke-tutorial-xxxxxx"
+  project = "kube-226720"
 }
 
 module "cluster" {
@@ -12,8 +12,8 @@ module "cluster" {
 
   project                             = local.project
   source                              = "./gke"
-  region                              = "europe-north1"
-  location                            = "europe-north1-a"
+  region                              = "us-east1"
+  location                            = "us-east1-d"
   cluster_name                        = "kluster"
   cluster_range_name                  = "gke-pods"
   services_range_name                 = "gke-services"
