@@ -1,7 +1,7 @@
 terraform {
   required_version = "~> 0.12"
   backend "remote" {
-    organization = "my-organization"
+    organization = "cn-dino"
 
     workspaces {
       name = "gke-tutorial"
