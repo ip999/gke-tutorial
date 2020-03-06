@@ -40,4 +40,7 @@ resource "google_container_node_pool" "custom_nodepool" {
     }
 
   }
+    depends_on = [
+    google_container_cluster.kluster,
+  ]
 }
