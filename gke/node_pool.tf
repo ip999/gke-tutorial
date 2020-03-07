@@ -7,7 +7,8 @@ resource "google_container_node_pool" "custom_nodepool" {
   location           = var.location
   cluster            = var.cluster_name
   initial_node_count = each.value.initial_node_count
-
+  depends_on = ["google_container_cluster.k8s"]
+  
   autoscaling {
     min_node_count = lookup(each.value, "min_node_count", 1)
     max_node_count = lookup(each.value, "max_node_count", 2)
