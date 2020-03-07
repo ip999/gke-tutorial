@@ -42,6 +42,7 @@ module "cluster" {
       disk_type          = "pd-standard"
       image_type         = "COS"
       service_account    = "kluster-serviceaccount@${local.project}.iam.gserviceaccount.com"
+      depends_on = ["google_container_cluster.k8s"]
     }
     web-pool = {
       machine_type       = "f1-micro" # $$$
@@ -55,7 +56,7 @@ module "cluster" {
       disk_type          = "pd-standard"
       image_type         = "COS"
       service_account    = "kluster-serviceaccount@${local.project}.iam.gserviceaccount.com"
-
+      depends_on = ["google_container_cluster.k8s"]
     }
   }
 
