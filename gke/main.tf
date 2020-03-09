@@ -41,4 +41,10 @@ resource "google_container_cluster" "k8s" {
     cluster_secondary_range_name  = var.cluster_range_name
     services_secondary_range_name = var.services_range_name
   }
+  
+  addons_config {
+    http_load_balancing {
+      disabled = true
+    }
+  }
 }
