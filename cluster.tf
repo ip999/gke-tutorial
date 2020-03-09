@@ -45,9 +45,9 @@ module "cluster" {
     }
     web-pool = {
       machine_type       = "f1-micro" # $$$
-      initial_node_count = 2
+      initial_node_count = 3
       min_node_count     = 1
-      max_node_count     = 2
+      max_node_count     = 3
       preemptible        = true
       auto_repair        = true
       auto_upgrade       = true
